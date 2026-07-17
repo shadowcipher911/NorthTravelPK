@@ -1,4 +1,19 @@
-    
+  <?php
+session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include('inc/config.php');
+
+if (!isset($_SESSION['userid'])) {
+    header('Location: login.php');
+    exit();
+}
+
+
+
+?>  
  
  <?php
  include 'inc/head.php';
@@ -47,8 +62,8 @@
 					?>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mb20">
 					<div class="gallery-img">
-						<a href="admin/pacakgeimages/<?php echo htmlentities($row->PackageImage); ?>" class="image-link imghover" title="gallery zoom image">
-							<img src="admin/pacakgeimages/<?php echo htmlentities($row->PackageImage); ?>" alt="Package Image" class="img-fluid">
+						<a href="../admin/pacakgeimages/<?php echo htmlentities($row->PackageImage); ?>" class="image-link imghover" title="gallery zoom image">
+							<img src="../admin/pacakgeimages/<?php echo htmlentities($row->PackageImage); ?>" alt="Package Image" class="img-fluid" style="height:350px;width:100%">
 						</a>
 					</div>
 				</div>

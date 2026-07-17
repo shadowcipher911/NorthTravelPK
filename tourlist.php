@@ -1,4 +1,20 @@
- 
+      <?php
+session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include('inc/config.php');
+
+if (!isset($_SESSION['userid'])) {
+    header('Location: login.php');
+    exit();
+}
+
+
+
+?> 
+
  <?php
  include 'inc/head.php';
  
@@ -44,7 +60,7 @@
                         <!-- destination-section -->
                         <div class="destination-block">
                             <div class="desti-img">
-                                <img src="admin/pacakgeimages/<?php echo htmlentities($row->PackageImage); ?>" alt="" style="height:400px; width:520px">
+                                <img src="../admin/pacakgeimages/<?php echo htmlentities($row->PackageImage); ?>" alt="" style="height:400px; width:520px">
                                 <a href="#" class="desti-title"><?php echo htmlentities($row->PackageName); ?></a>
                                 <div class="overlay">
                                     </div>

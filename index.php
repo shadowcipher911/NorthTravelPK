@@ -1,4 +1,22 @@
- 
+     <?php
+session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include('inc/config.php');
+
+if (!isset($_SESSION['userid'])) {
+    header('Location: login.php');
+    exit();
+}
+
+
+
+?> 
+
+
+
  <?php
  include 'inc/head.php';
  
@@ -26,7 +44,7 @@
                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                                 <div class="slider-captions">
                                     <h1 class="slider-title"> Travel Inside Pakistan explore it. </h1>
-                                    <a href="#" class="btn btn-primary">Book Now</a>
+                                    <a href="tourlist.php" class="btn btn-primary">Book Now</a>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +182,7 @@
             </div>
         </div>
    
-        <div class="space-medium">
+        <!-- <div class="space-medium">
             <div class="container-fluid">
                 <div class="row">
                    
@@ -180,7 +198,7 @@
                        
                         <div class="destination-block">
                             <div class="desti-img">
-                                <img src="images/Naran-Rafting.jpg" alt="">
+                                <img src="images/naran-kaghan.jpg" alt="">
                                 <a href="tourlist.php" class="desti-title">Narran-Valley</a>
                                 <div class="overlay">
                                 </div>
@@ -242,7 +260,7 @@
             </div>
         </div>
        </div>
-	   
+	    -->
         <div class="space-medium">
             <div class="container">
                 <div class="row">

@@ -1,4 +1,19 @@
+     <?php
+session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+include('inc/config.php');
+
+if (!isset($_SESSION['userid'])) {
+    header('Location: login.php');
+    exit();
+}
+
+
+
+?> 
  
  <?php
  include 'inc/head.php';
@@ -47,9 +62,9 @@
 								<div class=" mt-5">
 									<h3> Why Choose Us? </h3>
 									<ul>
-									<li>✅ Expertly Designed Tours – Whether you're an adventure seeker, history enthusiast, or honeymoon couple, we offer tailor-made packages to suit every traveler.</li>
-									<li>✅ Local Guides & Support – Our professional guides and 24/7 customer support ensure your journey is smooth and enriching.</li>
-									<li>✅ Trusted & Registered Company – We are a licensed tour operator, dedicated to transparency, comfort, and top-notch service.</li>
+									<li> Expertly Designed Tours – Whether you're an adventure seeker, history enthusiast, or honeymoon couple, we offer tailor-made packages to suit every traveler.</li>
+									<li> Local Guides & Support – Our professional guides and 24/7 customer support ensure your journey is smooth and enriching.</li>
+									<li> Trusted & Registered Company – We are a licensed tour operator, dedicated to transparency, comfort, and top-notch service.</li>
 									</ul>
                                     
                                 </div>
@@ -120,7 +135,7 @@
             </div>
         </div>
       
-        <div class="space-medium">
+        <!-- <div class="space-medium">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mb60">
@@ -134,15 +149,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <!-- team-member -->
+                 <div class="row">
+                    team-member 
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12 ">
                         <div class="team-block">
                             <div class="team-img">
-                                <a href="#" class="imghover"><img src="images/team_member_1.jpg" alt="" class="img-fluid"></a>
+                                <a href="#" class="imghover"><img src="images/CEO.jpg" alt="" class="img-fluid"></a>
                             </div>
                             <div class="team-content">
-                                <h4 class="team-title">Raymond Andersen</h4>
+                                <h4 class="team-title">Ali Hassan</h4>
                                 <p class="team-meta">CEO &amp; Founder</p>
                             </div>
                         </div>
@@ -153,15 +168,15 @@
                                 <a href="#" class="imghover"><img src="images/team_member_4.jpg" alt="" class="img-fluid"></a>
                             </div>
                             <div class="team-content">
-                                <h4 class="team-title">Kala Dewitt</h4>
+                                <h4 class="team-title">Muhammad Bilal</h4>
                                 <p class="team-meta">Blog Writer</p>
                             </div>
                         </div>
                     </div>
-                    <!-- /.team-member -->
-                </div>
+                     /.team-member 
+                </div> 
             </div>
-        </div>
+        </div> -->
         <!-- /.team-section -->
         <!-- certificate-section -->
         <div class="space-medium bg-light">

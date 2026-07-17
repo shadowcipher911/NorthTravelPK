@@ -1,4 +1,21 @@
-     
+      <?php
+session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include('inc/config.php');
+
+if (!isset($_SESSION['userid'])) {
+    header('Location: login.php');
+    exit();
+}
+
+
+
+?> 
+
+
 	  <?php
 	  include 'inc/head.php';
 	  
@@ -28,7 +45,7 @@
             <div class="container">
                 <div class="row">
                    <?php
-						include('inc/config.php'); // your PDO config
+						include('inc/config.php'); 
 
 						try {
 							$sql = "SELECT * FROM tblreviews ORDER BY created_at DESC LIMIT 6";
@@ -45,13 +62,14 @@
 									<div class="testimonial-content">
 										<p class="testimonial-text">“<?php echo htmlentities($review->message); ?>”</p>
 										<span class="testi-meta">
+											<!-- this $review-> name shows profile name at review -->
 											<strong>- <?php echo htmlentities($review->name); ?></strong>
 											(Client)
 										</span>
 										<div class="testi-arrow"></div>
 									</div>
 									<div class="testi-img">
-										<img src="images/default-user.png" alt="client" class="rounded-circle">
+										<img src="images/default-user.jpg" alt="client" class="rounded-circle" style="height:10px, width:20px">
 									</div>
 								</div>
 								<!-- /.testimonial-block -->
